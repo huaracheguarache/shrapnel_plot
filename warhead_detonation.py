@@ -61,15 +61,18 @@ ax.scatter(shrapnel_positions[escaped_index, 0, -1],
            s=2)
 
 ax.set_title('Shrapnel fan and impacts on ground')
-ax.xaxis.set_major_locator(ticker.MultipleLocator(base=5, offset=0))
+ax.xaxis.set_major_locator(ticker.MultipleLocator(base=10, offset=0))
 ax.set_xlabel('Length [m]')
-ax.yaxis.set_major_locator(ticker.MultipleLocator(base=5, offset=0))
+ax.yaxis.set_major_locator(ticker.MultipleLocator(base=10, offset=0))
 ax.set_ylabel('Height [m]')
-ax.zaxis.set_major_locator(ticker.MultipleLocator(base=5, offset=0))
+ax.zaxis.set_major_locator(ticker.MultipleLocator(base=10, offset=0))
 ax.set_zlabel('Width [m]')
 
 # Make sure the aspect ratio is set to equal so that the shrapnel fan looks like a proper circle.
 ax.set_aspect('equal')
+
+# Set the initial viewing angle and show the plot.
+ax.view_init(140, -10, 90)
 plt.show()
 
 # A 2D-plot of the resulting shrapnel pattern on the ground.
